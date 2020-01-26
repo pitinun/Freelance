@@ -5,22 +5,7 @@
  - [Yarn V1.12.1](https://yarnpkg.com/getting-started/install)
 
 
-# Initial
-
+# Initial Backend
 ```shell
-yarn install 
-```
-or
-```shell
-npm install
-```
-
-# Start
-
-```shell
-yarn serve 
-```
-or
-```shell
-npm run serve
+gradlew bootRun
 ```
