@@ -9,3 +9,7 @@
 ```shell
 gradlew bootRun
 ```
+# Initial Backend
+```shell
+npm install and npm run serve
+```
