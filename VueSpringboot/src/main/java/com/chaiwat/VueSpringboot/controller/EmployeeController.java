@@ -27,10 +27,10 @@ public class EmployeeController {
     @Autowired
     private JobServiceImp jobServiceImp;
 
-    // public  EmployeeController(EmployeeServiceImpl employeeServiceImpl , JobServiceImp jobServiceImp){
-    //     this.employeeServiceImpl = employeeServiceImpl;
-    //     this.jobServiceImp = jobServiceImp;
-    // }
+    public  EmployeeController(EmployeeServiceImpl employeeServiceImpl , JobServiceImp jobServiceImp){
+        this.employeeServiceImpl = employeeServiceImpl;
+        this.jobServiceImp = jobServiceImp;
+    }
 
     @GetMapping("/employees")
     Collection<Employee> getAllEmployee(){
@@ -38,8 +38,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/emp/findByJobId/{jobId}")
-    Optional<Employee> getEmployeeFromJob(@PathVariable Long jobId){
+    Collection<Employee> getEmployeeFromJob(@PathVariable Long jobId){
         Optional<Job> job = jobServiceImp.findById(jobId);
+        System.out.println(job.get());
         return employeeServiceImpl.findByJobId(job.get());
     }
 }

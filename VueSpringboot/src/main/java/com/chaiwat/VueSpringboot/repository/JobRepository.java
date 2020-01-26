@@ -1,5 +1,6 @@
 package com.chaiwat.VueSpringboot.repository;
 
+
 import java.util.Optional;
 
 import com.chaiwat.VueSpringboot.entity.Job;
@@ -14,5 +15,5 @@ import org.springframework.stereotype.Repository;
 public interface JobRepository extends JpaRepository<Job, Long> {
 
     Optional<Job> findById(Long id);
-
+    
 }
