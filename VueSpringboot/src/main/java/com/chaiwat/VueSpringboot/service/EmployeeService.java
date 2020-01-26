@@ -12,7 +12,7 @@ import com.chaiwat.VueSpringboot.entity.Job;
 public interface EmployeeService {
 
     Collection<Employee> findAll();
-    Optional<Employee> findByJobId(Job id); 
+    Collection<Employee> findByJobId(Job id); 
     Employee findByName(String name);
     Boolean save(Employee employee);
     Boolean update(Employee employee);

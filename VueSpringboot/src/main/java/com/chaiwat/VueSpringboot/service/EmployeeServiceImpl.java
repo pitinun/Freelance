@@ -25,7 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Optional<Employee> findByJobId(Job id) {
+    public Collection<Employee> findByJobId(Job id) {
         return employeeRepository.findByJobId(id);
     }
 
