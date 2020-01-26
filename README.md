@@ -1,5 +1,5 @@
 # Freelance
 
-# yarn install 
-or
-# npm install
+- yarn install 
+- or
+- npm install
