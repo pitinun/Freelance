@@ -1,47 +1,60 @@
 <template>
-  <v-container>
-    <v-layout text-center wrap>
-      <v-flex xs12>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
-
-      <v-flex>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-      </v-flex>
-
-      <v-row justify="center">
-        <v-col cols="10">
+  <v-container style="background-color:#fbd800;">
+    <div style="width: 100%;height: 50px;text-align: center;padding-top: 1%;min-height: 50px;background-color: goldenrod;color: currentColor;">
+      <span style="
+    position: absolute;
+    top: 2.5%;
+">
+        พนักงาน
+      </span>
+    </div>
+    
+    
+    
+    <v-row
+      style="
+    padding: 10px;
+    margin-left: 14%;
+"
+    >
+      <v-row
+        style="
+    padding: 10px;
+"
+      >
+        <v-col cols="5">
+          <h4>1</h4>
           <v-select
-            :items="jobDescriptions"
             v-model="selectJobDescriptions"
-            label="ลักษณะงาน"
-            item-text="description"
+            :items="jobDescriptions"
             item-value="id"
+            item-text="description"
+            label="select"
             @change="choseJobDescriptions"
             required
           >
           </v-select>
         </v-col>
-      </v-row>
 
-      <v-row justify="center">
-        <v-col cols="10">
-          <v-text-field
-            labe="ชื่อพนักงาน"
-            block
-            disabled
-            v-model="employeesName"
-          ></v-text-field>
-        </v-col>
+        <v-row>
+          <v-col cols="8">
+            <h4>2</h4>
+            <v-text-field
+              labe="ชื่อพนักงาน"
+              block
+              disabled
+              v-model="employeesName"
+            >
+            </v-text-field>
+          </v-col>
+
+          <v-col cols="5">
+            <h4>3</h4>
+            <v-select> </v-select>
+          </v-col>
+        </v-row>
       </v-row>
-    </v-layout>
+    </v-row>
   </v-container>
 </template>
 
@@ -73,7 +86,23 @@ export default {
   mounted() {
     axios.get(`http://localhost:9000/api/jobs`).then(response => {
       this.jobDescriptions = response.data;
+      //alert(this.jobDescriptions[0].description)
     });
   }
 };
 </script>
+<style>
+.select-one {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.select-one::before {
+  display: table;
+  content: " ";
+}
+
+.select-one::after {
+  clear: both;
+}
+</style>
