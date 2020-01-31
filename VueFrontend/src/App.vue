@@ -1,60 +1,55 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+    <v-app-bar app color="pink lighten-4" dark>
+      <v-btn href="http://freelance108.com/" target="_blank" text>
+        <span class="mr-2 font-weight-black">Freelance108</span>
+      </v-btn>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-row justify="center">
+        <v-btn href="http://freelance108.com/" target="_blank" text>
+          <span class="mr-2 font-weight-medium">Home</span>
+        </v-btn>
+
+        <v-btn href="http://freelance108.com/" target="_blank" text>
+          <span class="mr-2 font-weight-medium">ฟรีแลนซ์</span>
+        </v-btn>
+
+        <v-btn href="http://localhost:8080/" text>
+          <span class="mr-2 font-weight-medium">ผู้ว่าจ้างงาน</span>
+        </v-btn>
+
+        <v-btn href="http://localhost:8080/" text>
+          <span class="mr-2 font-weight-medium">Activity</span>
+        </v-btn>
+      </v-row>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <Customer />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Customer from "./components/Customer";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-    HelloWorld,
+    Customer
   },
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
